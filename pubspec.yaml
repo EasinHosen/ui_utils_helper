@@ -1,15 +1,16 @@
 name: ui_utils_helper
-description: "A Flutter package to help development easy."
+description: "A Flutter package to help make development easy."
 version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: '>=2.17.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
