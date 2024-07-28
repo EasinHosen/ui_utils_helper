@@ -26,8 +26,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-import '../utils/utils.dart';
+import 'package:ui_utils_helper/src/utils/utils.dart';
 
 /// Enum defining possible positions for the toast message on the screen.
 enum ToastPosition {
@@ -50,7 +49,7 @@ class ToastManager {
   /// This method should be called early in the app's lifecycle to ensure that the toast
   /// system is ready to display messages when needed.
   static void initialize() {
-    _overlayState = navigatorKey.currentState?.overlay;
+    _overlayState = Utils.navigatorKey.currentState?.overlay;
   }
 
   /// Displays a toast message on the screen.
@@ -91,7 +90,7 @@ class ToastManager {
     ///message font size
     double messageFontSize = 14,
   }) {
-    _overlayState ??= navigatorKey.currentState?.overlay;
+    _overlayState ??= Utils.navigatorKey.currentState?.overlay;
     if (_overlayState == null) {
       if (kDebugMode) {
         print('OverlayState is null. Toast cannot be shown.');

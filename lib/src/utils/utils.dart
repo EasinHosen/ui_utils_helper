@@ -12,7 +12,9 @@ import 'package:intl/intl.dart';
 ///
 /// This key can be used to perform navigation actions from any part of the app
 /// without having to pass the BuildContext around.
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+class Utils {
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+}
 
 /// Formats a [DateTime] object into a string based on the provided [pattern].
 ///
