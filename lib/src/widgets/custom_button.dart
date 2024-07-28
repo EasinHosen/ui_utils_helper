@@ -2,6 +2,67 @@ import 'package:flutter/material.dart';
 
 import 'custom_sized_box.dart';
 
+/// A customizable button widget.
+///
+/// The `CustomButton` widget provides a highly customizable button with various
+/// properties to control its appearance and behavior.
+///
+/// ## Parameters:
+///
+/// - `label` (\[String\]): The text label to display on the button. This parameter is required.
+/// - `onPressed` (\[Function()? \]): The callback function to be called when the button is pressed.
+/// - `primary` (\[Color? \]): The primary color of the button.
+/// - `borderColor` (\[Color? \]): The color of the button's border.
+/// - `labelColor` (\[Color? \]): The color of the button's label text.
+/// - `fontSize` (\[double? \]): The font size of the button's label text.
+/// - `fontWeight` (\[FontWeight? \]): The font weight of the button's label text.
+/// - `iconData` (\[String? \]): The icon data to display on the button.
+/// - `height` (\[double? \]): The height of the button.
+/// - `borderWidth` (\[double? \]): The width of the button's border.
+/// - `elevation` (\[double? \]): The elevation of the button.
+/// - `width` (\[double? \]): The width of the button.
+/// - `borderRadiusAll` (\[double? \]): The border radius of the button.
+/// - `contentPadding` (\[double? \]): The padding inside the button.
+/// - `marginHorizontal` (\[double? \]): The horizontal margin around the button.
+/// - `marginVertical` (\[double? \]): The vertical margin around the button.
+/// - `contentHorizontalPadding` (\[double? \]): The horizontal padding inside the button.
+/// - `contentVerticalPadding` (\[double? \]): The vertical padding inside the button.
+/// - `isDisable` (\[bool\]): Whether the button is disabled. Defaults to `false`.
+/// - `prefixImage` (\[String? \]): The image to display before the label.
+/// - `prefixImageHeight` (\[double? \]): The height of the prefix image.
+/// - `prefixImageWidth` (\[double? \]): The width of the prefix image.
+/// - `prefixImageColor` (\[Color? \]): The color of the prefix image.
+/// - `prefixImageBgColor` (\[Color? \]): The background color of the prefix image.
+/// - `prefixImageBorderRadius` (\[double? \]): The border radius of the prefix image.
+/// - `suffixImage` (\[String? \]): The image to display after the label.
+/// - `suffixImageHeight` (\[double? \]): The height of the suffix image.
+/// - `suffixImageWidth` (\[double? \]): The width of the suffix image.
+/// - `suffixImageColor` (\[Color? \]): The color of the suffix image.
+/// - `suffixImageBgColor` (\[Color? \]): The background color of the suffix image.
+/// - `suffixImageBorderRadius` (\[double? \]): The border radius of the suffix image.
+///
+/// ## Example:
+///
+/// ```dart
+/// CustomButton(
+///   label: 'Click Me',
+///   onPressed: () {
+///     print('Button Pressed');
+///   },
+///   primary: Colors.blue,
+///   borderColor: Colors.blueAccent,
+///   labelColor: Colors.white,
+///   fontSize: 16,
+///   fontWeight: FontWeight.bold,
+///   height: 50,
+///   width: 200,
+///   borderRadiusAll: 8,
+///   contentPadding: 16,
+///   prefixImage: 'assets/icon.png',
+///   suffixImage: 'assets/icon.png',
+/// )
+/// ```
+
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
@@ -41,30 +102,33 @@ class CustomButton extends StatelessWidget {
   final Function()? onPressed;
   final Color? primary;
   final Color? labelColor;
-  final Color? borderColor,
-      prefixImageColor,
-      prefixImageBgColor,
-      suffixImageColor,
-      suffixImageBgColor;
+  final Color? borderColor;
+  final Color? prefixImageColor;
+  final Color? prefixImageBgColor;
+  final Color? suffixImageColor;
+  final Color? suffixImageBgColor;
   final double? fontSize;
   final double? marginHorizontal;
   final double? marginVertical;
-  final double? height,
-      prefixImageHeight,
-      prefixImageWidth,
-      suffixImageHeight,
-      suffixImageWidth;
+  final double? height;
+  final double? prefixImageHeight;
+  final double? prefixImageWidth;
+  final double? suffixImageHeight;
+  final double? suffixImageWidth;
   final double? elevation;
   final double? contentPadding;
   final double? contentHorizontalPadding;
   final double? contentVerticalPadding;
   final double? width;
-  final double? borderWidth, prefixImageBorderRadius, suffixImageBorderRadius;
+  final double? borderWidth;
+  final double? prefixImageBorderRadius;
+  final double? suffixImageBorderRadius;
   final double? borderRadiusAll;
   final FontWeight? fontWeight;
   final String? iconData;
   final bool isDisable;
-  final String? prefixImage, suffixImage;
+  final String? prefixImage;
+  final String? suffixImage;
 
   @override
   Widget build(BuildContext context) {

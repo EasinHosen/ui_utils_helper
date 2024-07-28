@@ -35,10 +35,36 @@ class _ViewUiToolsState extends State<ViewUiTools> {
             ),
             CustomSizedBox.space8H,
             CustomButton(
-                label: 'show toast',
-                onPressed: () {
-                  ToastManager.show('Hello Toast');
-                }),
+              label: 'show toast',
+              onPressed: () {
+                ToastManager.show('Hello Toast');
+              },
+            ),
+            const Text('Divider'),
+            const CustomDivider(),
+            CustomSizedBox.space8H,
+            CustomDropDownMenu(
+              selectedOption: 'Option 1',
+              hintText: 'Select an option',
+              onChange: (value) {
+                setState(() {});
+              },
+              list: const ['Option 1', 'Option 2', 'Option 3'],
+              borderRadius: BorderRadius.circular(8),
+              headerTitle: 'Dropdown Header Title',
+              hasHeaderTitle: true,
+            ),
+            CustomSizedBox.space8H,
+            const Text('Toggle Switch'),
+            CustomAnimatedToggleSwitch(
+              onChanged: (value) {
+                setState(() {});
+              },
+              width: 60,
+              height: 30,
+              childLeft: const Text("En"),
+              childRight: const Text("Sp"),
+            ),
           ],
         ),
       ),

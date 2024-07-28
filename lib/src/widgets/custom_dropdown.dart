@@ -1,7 +1,49 @@
 import 'package:flutter/material.dart';
 import 'custom_sized_box.dart';
 
+/// A custom dropdown menu widget with extensive customization options.
+///
+/// The [CustomDropDownMenu] widget allows you to create a dropdown menu with customizable
+/// options such as border radius, height, width, margins, font styles, colors, and more.
+///
+/// Example usage:
+/// ```dart
+/// CustomDropDownMenu(
+///   selectedOption: 'Option 1',
+///   hintText: 'Select an option',
+///   onChange: (value) {
+///     // Handle change
+///   },
+///   list: ['Option 1', 'Option 2', 'Option 3'],
+///   borderRadius: BorderRadius.circular(8),
+///   height: 50,
+///   width: 200,
+///   horizontalMargin: 16,
+///   verticalMargin: 8,
+///   fontWeight: FontWeight.bold,
+///   fontSize: 14,
+///   isRequiredInLabel: true,
+///   isEnable: true,
+///   listTextColor: Colors.black,
+///   selectedTextColor: Colors.blue,
+///   label: 'Dropdown Label',
+///   headerTitle: 'Header Title',
+///   hasHeaderTitle: true,
+///   isRequiredInHeader: true,
+///   bgColor: Colors.white,
+///   enabledBorderColor: Colors.blue,
+///   focusedBorderColor: Colors.green,
+///   selectedTextFontWeight: FontWeight.w600,
+///   dropdownItemAlignment: Alignment.centerLeft,
+///   listTextFontWeight: FontWeight.normal,
+///   headerTitleFontSize: 16,
+///   headerTitleFontColor: Colors.black,
+/// )
+/// ```
 class CustomDropDownMenu extends StatelessWidget {
+  /// Creates a custom dropdown menu.
+  ///
+  /// The [selectedOption], [hintText], [onChange], and [list] parameters are required.
   const CustomDropDownMenu({
     super.key,
     required String? selectedOption,
@@ -35,25 +77,33 @@ class CustomDropDownMenu extends StatelessWidget {
         _hintText = hintText,
         _list = list;
 
-  final String? _selectedOption, _hintText, label, headerTitle;
+  final String? _selectedOption;
+  final String? _hintText;
+  final String? label;
+  final String? headerTitle;
   final List<dynamic> _list;
   final Function onChange;
-  final FontWeight? fontWeight, selectedTextFontWeight, listTextFontWeight;
-  final double? verticalMargin,
-      fontSize,
-      horizontalMargin,
-      height,
-      width,
-      headerTitleFontSize;
-  final bool isRequiredInLabel, isEnable, hasHeaderTitle, isRequiredInHeader;
+  final FontWeight? fontWeight;
+  final FontWeight? selectedTextFontWeight;
+  final FontWeight? listTextFontWeight;
+  final double? verticalMargin;
+  final double? fontSize;
+  final double? horizontalMargin;
+  final double? height;
+  final double? width;
+  final double? headerTitleFontSize;
+  final bool isRequiredInLabel;
+  final bool isEnable;
+  final bool hasHeaderTitle;
+  final bool isRequiredInHeader;
   final BorderRadius? borderRadius;
   final AlignmentGeometry? dropdownItemAlignment;
-  final Color? listTextColor,
-      selectedTextColor,
-      bgColor,
-      enabledBorderColor,
-      focusedBorderColor,
-      headerTitleFontColor;
+  final Color? listTextColor;
+  final Color? selectedTextColor;
+  final Color? bgColor;
+  final Color? enabledBorderColor;
+  final Color? focusedBorderColor;
+  final Color? headerTitleFontColor;
 
   @override
   Widget build(BuildContext context) {

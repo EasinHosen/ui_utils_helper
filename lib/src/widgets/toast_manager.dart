@@ -93,7 +93,7 @@ class ToastManager {
     _overlayState ??= Utils.navigatorKey.currentState?.overlay;
     if (_overlayState == null) {
       if (kDebugMode) {
-        print('OverlayState is null. Toast cannot be shown.');
+        print('OverlayState is null. Toast cannot be shown. create a global navigator key and assign it to Utils.navigatorKey in the main.dart file.');
       }
       return;
     }

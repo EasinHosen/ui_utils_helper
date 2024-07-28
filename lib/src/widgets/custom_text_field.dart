@@ -7,39 +7,53 @@ class CustomTextField extends StatefulWidget {
   final double? width;
   final double? borderRadius;
   final double? passwordIconSize;
-  final String? hintText;
   final double? hintSize;
-  final Color? hintColor;
-  final FontWeight? hintFontWeight;
   final double? textSize;
-  final Color? textColor;
-  final Color? passwordIconColor;
-  final FontWeight? textFontWeight;
-  final String? labelText;
   final double? labelSize;
-  final Color? labelColor, fillColor;
-  final FontWeight? labelFontWeight;
-  final String? errorMessage;
-  final int? maxLine;
-  final TextEditingController? controller;
   final double? marginHorizontal;
   final double? marginVertical;
+  final double? borderWidth;
+  final double? headerFontSize;
+
+  final String? hintText;
+  final String? labelText;
+  final String? errorMessage;
+  final String? headerTitle;
+
+  final Color? hintColor;
+  final Color? textColor;
+  final Color? passwordIconColor;
+  final Color? labelColor;
+  final Color? fillColor;
+
+  final FontWeight? hintFontWeight;
+  final FontWeight? textFontWeight;
+  final FontWeight? labelFontWeight;
+  final FontWeight? headerFontWeight;
+
+  final int? maxLine;
+
+  final TextEditingController? controller;
+
   final bool? isPassword;
   final bool? obscureText;
   final bool? isInvalid;
-  final Widget? suffixIcon;
-  final FocusNode? focusNode;
-  final TextInputType? keyboardType;
+  final bool? isRightContain;
+  final bool? hasHeaderTitle;
+  final bool? isRequiredWithHeader;
+
   final bool isRequiredWithoutHeader;
   final bool enabled;
-  final bool? isRightContain;
   final bool isRightAligned;
-  final ValueChanged<String>? onChanged;
-  final bool? hasHeaderTitle, isRequiredWithHeader;
-  final String? headerTitle;
-  final double? borderWidth, headerFontSize;
+
+  final Widget? suffixIcon;
   final Widget? prefixWidget;
-  final FontWeight? headerFontWeight;
+
+  final FocusNode? focusNode;
+
+  final TextInputType? keyboardType;
+
+  final ValueChanged<String>? onChanged;
 
   const CustomTextField({
     super.key,
