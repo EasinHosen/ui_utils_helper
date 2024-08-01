@@ -151,6 +151,7 @@ class CustomDropDownMenu extends StatelessWidget {
               child: DropdownButtonFormField<String>(
                 isExpanded: true,
                 isDense: true,
+                hint: Text(_hintText ?? ''),
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 18)
                       .copyWith(right: 10),
@@ -165,9 +166,8 @@ class CustomDropDownMenu extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: borderRadius ?? BorderRadius.circular(4),
                   ),
-                  hintText: _hintText,
                 ),
-                icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 30),
+                icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 24),
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: fontWeight ?? FontWeight.w500,
