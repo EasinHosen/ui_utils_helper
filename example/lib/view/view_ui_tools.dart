@@ -11,6 +11,10 @@ class ViewUiTools extends StatefulWidget {
 class _ViewUiToolsState extends State<ViewUiTools> {
   final TextEditingController _textEditingController = TextEditingController();
 
+  String ddSelectedOption = '';
+
+  final dummyList = ['Option 1', 'Option 2', 'Option 3'];
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -44,12 +48,14 @@ class _ViewUiToolsState extends State<ViewUiTools> {
             const CustomDivider(),
             CustomSizedBox.space8H,
             CustomDropDownMenu(
-              selectedOption: 'Option 1',
+              selectedOption: ddSelectedOption,
+              bgColor: Colors.transparent,
               hintText: 'Select an option',
               onChange: (value) {
+                ddSelectedOption = value!;
                 setState(() {});
               },
-              list: const ['Option 1', 'Option 2', 'Option 3'],
+              list: dummyList,
               borderRadius: BorderRadius.circular(8),
               headerTitle: 'Dropdown Header Title',
               hasHeaderTitle: true,

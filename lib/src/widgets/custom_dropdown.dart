@@ -82,7 +82,7 @@ class CustomDropDownMenu extends StatelessWidget {
   final String? label;
   final String? headerTitle;
   final List<dynamic> _list;
-  final Function onChange;
+  final Function(String?) onChange;
   final FontWeight? fontWeight;
   final FontWeight? selectedTextFontWeight;
   final FontWeight? listTextFontWeight;
@@ -151,7 +151,6 @@ class CustomDropDownMenu extends StatelessWidget {
               child: DropdownButtonFormField<String>(
                 isExpanded: true,
                 isDense: true,
-                // alignment: Alignment.centerLeft,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 18)
                       .copyWith(right: 10),
@@ -166,44 +165,16 @@ class CustomDropDownMenu extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: borderRadius ?? BorderRadius.circular(4),
                   ),
-                  // label: RichText(
-                  //   text: TextSpan(
-                  //     text: label,
-                  //     style: TextStyle(
-                  //       color: Colors.black.withOpacity(0.70),
-                  //       fontSize: 14,
-                  //       fontWeight: FontWeight.w400,
-                  //     ),
-                  //     children: <TextSpan>[
-                  //       if (isRequiredInLabel)
-                  //         const TextSpan(
-                  //           text: ' *',
-                  //           style: TextStyle(
-                  //               color:
-                  //                   // widget.focusNode!.hasFocus ?
-                  //                   Colors.red
-                  //               // : widget.labelColor ?? Colors.black.withOpacity(.7),
-                  //               ),
-                  //         )
-                  //     ],
-                  //   ),
-                  // ),
-                  // labelStyle: TextStyle(
-                  //   color: Colors.black.withOpacity(0.70),
-                  //   fontSize: 14,
-                  //   fontWeight: FontWeight.w400,
-                  // ),
-                  // labelText: label,
                   hintText: _hintText,
                 ),
-                icon: const Icon(Icons.keyboard_arrow_down_rounded,
-                    /*color:  Colors.blue!, */ size: 30),
+                icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 30),
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: fontWeight ?? FontWeight.w500,
                   fontSize: fontSize ?? 14,
                 ),
-                value: _selectedOption,
+                value:
+                    _selectedOption?.isEmpty ?? true ? null : _selectedOption,
                 onChanged: isEnable
                     ? (newValue) {
                         onChange(newValue);
