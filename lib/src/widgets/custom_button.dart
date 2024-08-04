@@ -98,36 +98,98 @@ class CustomButton extends StatelessWidget {
     this.suffixImageBorderRadius,
     this.suffixImage,
   });
+
+  /// The text label to display on the button.
   final String label;
+
+  /// The callback function to be called when the button is pressed.
   final Function()? onPressed;
+
+  /// The primary color of the button.
   final Color? primary;
+
+  /// The color of the button's label text.
   final Color? labelColor;
+
+  /// The color of the button's border.
   final Color? borderColor;
+
+  /// The color of the prefix image.
   final Color? prefixImageColor;
+
+  /// The background color of the prefix image.
   final Color? prefixImageBgColor;
+
+  /// The color of the suffix image.
   final Color? suffixImageColor;
+
+  /// The background color of the suffix image.
   final Color? suffixImageBgColor;
+
+  /// The font size of the button's label text.
   final double? fontSize;
+
+  /// The horizontal margin around the button.
   final double? marginHorizontal;
+
+  /// The vertical margin around the button.
   final double? marginVertical;
+
+  /// The height of the button.
   final double? height;
+
+  /// The height of the prefix image.
   final double? prefixImageHeight;
+
+  /// The width of the prefix image.
   final double? prefixImageWidth;
+
+  /// The height of the suffix image.
   final double? suffixImageHeight;
+
+  /// The width of the suffix image.
   final double? suffixImageWidth;
+
+  /// The elevation of the button.
   final double? elevation;
+
+  /// The padding inside the button.
   final double? contentPadding;
+
+  /// The horizontal padding inside the button.
   final double? contentHorizontalPadding;
+
+  /// The vertical padding inside the button.
   final double? contentVerticalPadding;
+
+  /// The width of the button.
   final double? width;
+
+  /// The width of the button's border.
   final double? borderWidth;
+
+  /// The border radius of the prefix image.
   final double? prefixImageBorderRadius;
+
+  /// The border radius of the suffix image.
   final double? suffixImageBorderRadius;
+
+  /// The border radius of the button.
   final double? borderRadiusAll;
+
+  /// The font weight of the button's label text.
   final FontWeight? fontWeight;
+
+  /// The icon data to display on the button.
   final String? iconData;
+
+  /// Whether the button is disabled.
   final bool isDisable;
+
+  /// The image to display before the label.
   final String? prefixImage;
+
+  /// The image to display after the label.
   final String? suffixImage;
 
   @override

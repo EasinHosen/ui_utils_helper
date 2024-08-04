@@ -77,32 +77,85 @@ class CustomDropDownMenu extends StatelessWidget {
         _hintText = hintText,
         _list = list;
 
+  /// The selected option in the dropdown.
   final String? _selectedOption;
+
+  /// The hint text displayed in the dropdown.
   final String? _hintText;
+
+  /// The label text displayed above the dropdown.
   final String? label;
+
+  /// The header title displayed above the dropdown.
   final String? headerTitle;
+
+  /// The list of items to display in the dropdown.
   final List<dynamic> _list;
+
+  /// The callback function when an option is selected.
   final Function(String?) onChange;
+
+  /// The font weight of the dropdown text.
   final FontWeight? fontWeight;
+
+  /// The font weight of the selected option text.
   final FontWeight? selectedTextFontWeight;
+
+  /// The font weight of the list items text.
   final FontWeight? listTextFontWeight;
+
+  /// The vertical margin around the dropdown.
   final double? verticalMargin;
+
+  /// The font size of the dropdown text.
   final double? fontSize;
+
+  /// The horizontal margin around the dropdown.
   final double? horizontalMargin;
+
+  /// The height of the dropdown.
   final double? height;
+
+  /// The width of the dropdown.
   final double? width;
+
+  /// The font size of the header title.
   final double? headerTitleFontSize;
+
+  /// Whether the label text is required.
   final bool isRequiredInLabel;
+
+  /// Whether the dropdown is enabled.
   final bool isEnable;
+
+  /// Whether the dropdown has a header title.
   final bool hasHeaderTitle;
+
+  /// Whether the header title is required.
   final bool isRequiredInHeader;
+
+  /// The border radius of the dropdown.
   final BorderRadius? borderRadius;
+
+  /// The alignment of the dropdown items.
   final AlignmentGeometry? dropdownItemAlignment;
+
+  /// The color of the list items text.
   final Color? listTextColor;
+
+  /// The color of the selected option text.
   final Color? selectedTextColor;
+
+  /// The background color of the dropdown.
   final Color? bgColor;
+
+  /// The color of the enabled border.
   final Color? enabledBorderColor;
+
+  /// The color of the focused border.
   final Color? focusedBorderColor;
+
+  /// The color of the header title text.
   final Color? headerTitleFontColor;
 
   @override
