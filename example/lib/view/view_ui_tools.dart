@@ -31,11 +31,22 @@ class _ViewUiToolsState extends State<ViewUiTools> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            CustomSizedBox.space8H,
             CustomTextField(
-              hintText: 'CustomTextField',
+              // hintText: 'CustomTextField',
               controller: _textEditingController,
-              hasHeaderTitle: true,
-              headerTitle: 'CustomTextField',
+              // hasHeaderTitle: true,
+              // headerTitle: 'CustomTextField',
+              labelText: 'Custom Text field',
+              prefixWidget: Image.asset(
+                'assets/icons/Lock.png',
+                height: 20,
+                width: 20,
+              ),
+              /* const Icon(
+                  Icons.lock_outline,
+                  size: 20,
+                ),*/
             ),
             CustomSizedBox.space8H,
             CustomButton(

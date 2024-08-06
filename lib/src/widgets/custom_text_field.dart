@@ -237,7 +237,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: widget.fillColor ?? Colors.transparent,
-                        prefixIcon: widget.prefixWidget,
+                        prefixIcon: widget.prefixWidget != null
+                            ? Container(
+                                width: 24, // Set the desired width
+                                height: 24, // Set the desired height
+                                alignment: Alignment.center,
+                                child: widget.prefixWidget,
+                              )
+                            : null,
                         // errorText: widget.errorMessage,
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 12,
