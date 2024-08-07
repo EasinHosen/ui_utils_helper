@@ -9,11 +9,15 @@ class CustomOTPWidget extends StatefulWidget {
   final Color? focusedBorderColor;
   final Color? unfocusedBorderColor;
   final TextStyle? textStyle;
-  final ValueChanged<String>? onOTPComplete;
+  final ValueChanged<String> onOTPComplete;
+  final bool? hasUnfocusedBorder;
+  final bool? hasFocusedBorder;
+  final double? borderRadius;
 
   const CustomOTPWidget({
     super.key,
     required this.otpDigits,
+    required this.onOTPComplete,
     this.height,
     this.otpFieldWidth,
     this.spacing,
@@ -21,7 +25,9 @@ class CustomOTPWidget extends StatefulWidget {
     this.focusedBorderColor,
     this.unfocusedBorderColor,
     this.textStyle,
-    this.onOTPComplete,
+    this.hasUnfocusedBorder,
+    this.hasFocusedBorder,
+    this.borderRadius,
   }) : assert(otpDigits >= 4 && otpDigits <= 8);
 
   @override
@@ -79,8 +85,8 @@ class _CustomOTPWidgetState extends State<CustomOTPWidget> {
 
   void _handleInputChange() {
     String otp = getOTP();
-    if (otp.length == widget.otpDigits && widget.onOTPComplete != null) {
-      widget.onOTPComplete!(otp);
+    if (otp.length == widget.otpDigits) {
+      widget.onOTPComplete(otp);
     }
   }
 
@@ -95,6 +101,10 @@ class _CustomOTPWidgetState extends State<CustomOTPWidget> {
           alignment: Alignment.center,
           width: otpFieldWidth,
           height: widget.height ?? 60,
+          decoration: BoxDecoration(
+            color: widget.fillColor ?? Colors.white,
+            borderRadius: BorderRadius.circular(widget.borderRadius ?? 10),
+          ),
           margin: EdgeInsets.symmetric(horizontal: widget.spacing ?? 8),
           child: TextField(
             controller: _controllers[index],
@@ -107,16 +117,21 @@ class _CustomOTPWidgetState extends State<CustomOTPWidget> {
               filled: true,
               fillColor: widget.fillColor ?? Colors.white,
               counterText: '',
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(
-                    color: widget.unfocusedBorderColor ?? Colors.grey),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide:
-                    BorderSide(color: widget.focusedBorderColor ?? Colors.blue),
-              ),
+              border: widget.hasUnfocusedBorder == true
+                  ? OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                          color: widget.unfocusedBorderColor ?? Colors.grey),
+                    )
+                  : InputBorder.none,
+              focusedBorder: widget.hasFocusedBorder == true
+                  ? OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(widget.borderRadius ?? 10),
+                      borderSide: BorderSide(
+                          color: widget.focusedBorderColor ?? Colors.blue),
+                    )
+                  : null,
             ),
             onChanged: (value) {
               _handleInputChange();

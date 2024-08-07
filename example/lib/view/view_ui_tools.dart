@@ -84,10 +84,13 @@ class _ViewUiToolsState extends State<ViewUiTools> {
             ),
             CustomOTPWidget(
               otpDigits: 4,
+              hasFocusedBorder: true,
+              focusedBorderColor: const Color(0xff5247E0),
+              fillColor: const Color(0xffEDEFF4),
               onOTPComplete: (otp) {
                 print("Entered OTP: $otp");
               },
-            )
+            ),
           ],
         ),
       ),
