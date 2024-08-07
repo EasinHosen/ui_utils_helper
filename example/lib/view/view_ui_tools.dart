@@ -82,6 +82,12 @@ class _ViewUiToolsState extends State<ViewUiTools> {
               childLeft: const Text("En"),
               childRight: const Text("Sp"),
             ),
+            CustomOTPWidget(
+              otpDigits: 4,
+              onOTPComplete: (otp) {
+                print("Entered OTP: $otp");
+              },
+            )
           ],
         ),
       ),

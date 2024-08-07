@@ -8,3 +8,4 @@ export 'src/widgets/custom_divider.dart';
 export 'src/widgets/custom_dropdown.dart';
 export 'src/widgets/toast_manager.dart';
 export 'src/utils/utils.dart';
+export 'src/widgets/custom_otp_widget.dart';
