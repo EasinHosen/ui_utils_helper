@@ -97,6 +97,7 @@ class CustomButton extends StatelessWidget {
     this.suffixImageWidth,
     this.suffixImageBorderRadius,
     this.suffixImage,
+    this.prefixImageGap,
   });
 
   /// The text label to display on the button.
@@ -189,6 +190,8 @@ class CustomButton extends StatelessWidget {
   /// The image to display before the label.
   final String? prefixImage;
 
+  final double? prefixImageGap;
+
   /// The image to display after the label.
   final String? suffixImage;
 
@@ -241,7 +244,10 @@ class CustomButton extends StatelessWidget {
                   ),
                 ),
               ),
-            if (prefixImage != null) CustomSizedBox.space12W,
+            if (prefixImage != null)
+              SizedBox(
+                width: prefixImageGap ?? 12,
+              ),
             Text(
               label,
               style: TextStyle(
