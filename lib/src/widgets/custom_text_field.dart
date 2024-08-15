@@ -62,6 +62,10 @@ class CustomTextField extends StatefulWidget {
   /// The color of the label text.
   final Color? labelColor;
 
+  final Color? focusBorderColor;
+
+  final Color? enabledBorderColor;
+
   /// The background color of the text field.
   final Color? fillColor;
 
@@ -168,6 +172,8 @@ class CustomTextField extends StatefulWidget {
     this.headerFontWeight,
     this.passwordIconColor,
     this.passwordIconSize,
+    this.focusBorderColor,
+    this.enabledBorderColor,
   });
 
   @override
@@ -289,7 +295,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                           borderRadius:
                               BorderRadius.circular(widget.borderRadius ?? 4),
                           borderSide: BorderSide(
-                            color: Colors.blue,
+                            color: widget.focusBorderColor ?? Colors.blue,
                             width: widget.borderWidth ?? 1.5,
                           ),
                         ),
@@ -297,7 +303,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                           borderRadius:
                               BorderRadius.circular(widget.borderRadius ?? 4),
                           borderSide: BorderSide(
-                            color: Colors.grey,
+                            color: widget.enabledBorderColor ?? Colors.grey,
                             width: widget.borderWidth ?? 0.5,
                           ),
                         ),
