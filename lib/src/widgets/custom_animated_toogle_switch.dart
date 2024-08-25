@@ -63,7 +63,7 @@ class _CustomAnimatedToggleSwitchState extends State<CustomAnimatedToggleSwitch>
 
     _colorAnimation = ColorTween(
       begin: widget.colorLeft ?? Colors.blue,
-      end: widget.colorLeft ?? Colors.green,
+      end: widget.colorRight ?? Colors.green,
     ).animate(_animationController);
   }
 
