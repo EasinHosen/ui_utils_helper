@@ -69,6 +69,7 @@ class CustomButton extends StatelessWidget {
     required this.label,
     this.onPressed,
     this.primary,
+    this.disabledBackgroundColor,
     this.borderColor,
     this.labelColor,
     this.fontSize,
@@ -108,6 +109,9 @@ class CustomButton extends StatelessWidget {
 
   /// The primary color of the button.
   final Color? primary;
+
+  ///disabled button background color
+  final Color? disabledBackgroundColor;
 
   /// The color of the button's label text.
   final Color? labelColor;
@@ -211,13 +215,14 @@ class CustomButton extends StatelessWidget {
       //       width: borderWidth ?? 1),
       // ),
       child: ElevatedButton(
-        onPressed: isDisable ? () {} : onPressed,
+        onPressed: isDisable ? null : onPressed,
         style: ElevatedButton.styleFrom(
           side: BorderSide(
               width: borderWidth ?? 1, color: borderColor ?? Colors.blue),
           foregroundColor: isDisable ? Colors.grey : primary ?? Colors.blue,
-          backgroundColor: isDisable ? Colors.grey : primary ?? Colors.blue,
+          backgroundColor: primary ?? Colors.blue,
           elevation: elevation ?? 0.5,
+          disabledBackgroundColor: disabledBackgroundColor ?? Colors.grey,
           padding: EdgeInsets.symmetric(
               horizontal: contentHorizontalPadding ?? contentPadding ?? 8,
               vertical: contentVerticalPadding ?? contentPadding ?? 8),
